@@ -43,6 +43,9 @@ window.addEventListener("pageswap", async (e) => {
 	if (oldPage !== "office" && oldPage !== "setup" && oldPage !== "virtual") {
 		// 遷移先の詳細と対になるカードの画像に遷移名を指定
 		const cardImage = document.querySelector(`#${newPage} img`)
+		// Codex チェック
+		// 問題の説明: contact.html など、index.html 上に対応する id を持つカードが存在しないページへ遷移した場合、cardImage が null になり style アクセスで実行時エラーになります。
+		// 修正アドバイス: cardImage の存在確認を入れてから viewTransitionName を設定するか、office/setup/virtual への遷移時だけ処理する条件に変更してください。
 		cardImage.style.viewTransitionName = "photo"
 
 		// 遷移後にBFCacheのカードの画像から遷移名を削除
@@ -77,6 +80,9 @@ window.addEventListener("pagereveal", async (e) => {
 	if (newPage !== "office" && newPage !== "setup" && newPage !== "virtual") {
 		// 遷移元の詳細と対になるカードの画像に遷移名を指定
 		const cardImage = document.querySelector(`#${oldPage} img`)
+		// Codex チェック
+		// 問題の説明: contact.html などカード要素を持たないページでこの処理が走ると、cardImage が null のまま style にアクセスしてコンソールエラーになります。
+		// 修正アドバイス: cardImage が取得できた場合のみ処理するガードを追加し、詳細ページと一覧ページの組み合わせだけで動く条件に絞ってください。
 		cardImage.style.viewTransitionName = "photo"
 
 		// 遷移の準備ができたらカードの画像から遷移名を削除

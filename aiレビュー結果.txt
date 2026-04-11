@@ -1,0 +1,12 @@
+============================================
+
+■コミット
+7dea4512ef87a8c144333fd9ed03df5814dd037d
+■問題の詳細
+assets/script.js - 40行目
+`document.querySelector(`#${newPage} img`)` の結果が `null` になる経路があります。`contact.html` のように `index.html` 上に対応するカード ID が存在しないページへ遷移すると、直後の `cardImage.style.viewTransitionName` で実行時エラーになります。
+修正アドバイス: `cardImage` の存在確認を行ってから処理するか、`office` / `setup` / `virtual` の詳細ページへの遷移時だけ実行される条件に変更してください。
+
+assets/script.js - 68行目
+`document.querySelector(`#${oldPage} img`)` も同様に `null` になる経路があります。カード要素を持たないページでこの処理が走ると、`style` アクセス時にコンソールエラーになります。
+修正アドバイス: `cardImage` が取得できた場合のみ `viewTransitionName` を設定し、一覧ページと詳細ページの対応関係がある場合だけ動作するよう条件を見直してください。
