@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.accordions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .accordion {
+        padding: 0 14px;
+        button {
+            padding: 0;
+            transition-duration: 0.3s;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+        img {
+            max-width: 400px;
+        }
+    }
+}
