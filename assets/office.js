@@ -4,8 +4,10 @@ for (const button of buttons) {
         const expanded = button.getAttribute("aria-expanded") === "true";
         button.setAttribute("aria-expanded", String(!expanded));
         const content = button.nextElementSibling;
-        if (content) {
-            content.hidden = expanded;
+        if (!expanded && content) {
+            content.classList.add("expanded");
+        } else if (expanded && content) {
+            content.classList.remove("expanded");
         }
     });
 }

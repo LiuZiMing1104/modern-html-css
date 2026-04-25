@@ -12,9 +12,20 @@
             &:hover {
                 opacity: 0.8;
             }
+            & + div {
+                height: 0;
+                overflow: hidden;
+                transition-duration: 0.3s;
+                &.expanded {
+                    height: calc-size(auto, size);
+                    overflow: visible;
+                }
+            }
         }
         img {
-            max-width: 400px;
+            max-width: 800px;
+            width: 100%;
+            height: auto;
         }
     }
 }
