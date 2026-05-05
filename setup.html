@@ -82,7 +82,15 @@
 
 					<h3>デザイン資料</h3>
 					<object data="https://html.spec.whatwg.org/print.pdf" type="application/pdf"></object>
+					<!-- Codex チェック
+					問題の説明: object 要素がローカルの assets/html-standard.pdf ではなく外部 URL を参照しているため、オフライン環境や外部接続制限のある環境では PDF が表示できません。ダウンロードリンクの参照先とも不一致です。
+					修正アドバイス: object の data も assets/html-standard.pdf を参照するよう統一し、表示用とダウンロード用で同じファイルを使ってください。
+					-->
 					<a class="download-link" href="/assets/html-standard.pdf" download>デザイン資料（PDF）をダウンロード</a>
+					<!-- Codex チェック
+					問題の説明: href が /assets/... のルート絶対パスになっているため、サイトをサブディレクトリ配下へ配置した場合に PDF へのリンクが 404 になる可能性があります。
+					修正アドバイス: このページ基準の相対パスである assets/html-standard.pdf を指定し、配置場所に依存しないリンクにしてください。
+					-->
 				</div>
 
 				<aside class="cta">
