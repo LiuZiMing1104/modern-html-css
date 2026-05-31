@@ -57,7 +57,7 @@
 				<label>
 					ユーザーID
 					<p class="error-msg">入力が正しくないです</p>
-					<input type="text" name="userId" placeholder="Aaaa000" pattern="^(?=[A-Z])(?=.*[a-z])(?=.*\d).+$" />
+					<input type="text" name="userId" placeholder="Aaaa000" pattern="^[A-Z](?=.*[a-z])(?=.*\d)[A-Za-z\d]*$" />
 					<p class="note">※下記パターンで入力ください</p>
 					<ul class="note">
 						<li>半角英字（大文字・小文字）と数字の組み合わせ</li>
