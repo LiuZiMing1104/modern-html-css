@@ -8,6 +8,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/style.css" class="css" />
+		<link rel="stylesheet" href="assets/contact.css" class="css" />
 		<script src="assets/script.js" defer blocking="render"></script>
 	</head>
 	<body>
@@ -55,7 +56,14 @@
 			<form action="#" method="post" class="contact">
 				<label>
 					お名前
-					<input type="text" name="fullname" placeholder="例）山田花子" />
+					<p class="error-msg">入力が正しくないです</p>
+					<input type="text" name="fullname" placeholder="Aaaa000" pattern="^(?=[A-Z])(?=.*[a-z])(?=.*\d).+$" />
+					<p class="note">※下記パターンで入力ください</p>
+					<ul class="note">
+						<li>半角英字（大文字・小文字）と数字の組み合わせ</li>
+						<li>最初は英字（大文字）</li>
+						<li>例）Aaaa000</li>
+					</ul>
 				</label>
 
 				<label>

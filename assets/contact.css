@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+p.error-msg {
+    display: none;
+}
+p.error-msg:has(+input:invalid) {
+    display: block;
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+.note {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+ul.note {
+    padding-left: 1.5rem;
+    li {
+        list-style-type: disc;
+    }
+}
+
+input[type=text]:invalid {
+    background-color: lightpink;
+}
