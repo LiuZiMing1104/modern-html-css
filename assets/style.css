@@ -718,6 +718,14 @@ body > footer {
 		font-size: 1.8em;
 	}
 
+	h4 {
+		margin-block: 1em 0.5em;
+	}
+
+	h4 + p {
+		margin: 0;
+	}
+
 	strong {
 		color: var(--attention);
 	}
@@ -780,4 +788,9 @@ body > footer {
 			translate: 0;
 		}
 	}
+}
+
+.body > h3 + p::first-letter {
+	initial-letter: 2 drop;
+	margin-right: 0.5em;
 }
