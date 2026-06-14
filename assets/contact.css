@@ -25,18 +25,14 @@ input[type=text]:invalid {
     background-color: lightpink;
 }
 
-input[type=reset] {
+.contact input[type=reset] {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     padding: 0.5rem 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-/* Codex チェック
-問題の説明: style.css の `.contact input:not([type="submit"])` のほうが詳細度が高いため、このルールの border と padding は上書きされて適用されません。
-修正アドバイス: セレクタを `.contact input[type="reset"]` にして詳細度を上げるか、style.css の共通入力スタイルから reset を除外してください。
-*/
 
-input[type=reset]:hover {
+.contact input[type=reset]:hover {
     background-color: #e0e0e0;
 }
