@@ -93,5 +93,9 @@ input[type=text]:invalid {
             left: 100%;
             transform: translateX(-50%);
         }
+        /* Codex チェック
+        問題の説明: 画面幅が600px未満になると .progress が画面幅いっぱいになり、step-1 と step-4 が左右へ半分はみ出して横スクロールの原因になります。
+        修正アドバイス: 両端ラベルを内側へ配置するか、.progress にラベル幅を考慮した左右の余白を設けてください。
+        */
     }
 }
